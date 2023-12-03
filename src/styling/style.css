@@ -48,3 +48,100 @@ body {
     width: 50%! important;
     min-width: 85%! important;
 }
+#header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+}
+
+.ant-layout-header.custom-header {
+  height: 64px;
+  padding: 0 50px;
+  color: rgba(0, 0, 0, 0.88);
+  line-height: 64px;
+
+}
+
+
+#header .ant-menu-horizontal .ant-menu-submenu:hover {
+
+  color: rgb(85, 170, 46) !important;
+}
+
+.ant-layout-header .ant-menu {
+  line-height: inherit;
+  width: 400px;
+  background-color: white;
+  color: black;
+}
+
+.demo-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.logo {
+  max-width: 100%;
+  max-height: 70px;
+  transform: translate(0%,15%);
+}
+
+body {
+  display: block;
+  margin: 0;
+}
+
+.card,
+.user {
+  font-size: 20px;
+  margin: 9px;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  background-color: rgba(78, 166, 37, 0.533);
+  height: 40px;
+  width: 40px;
+  border-radius: 30px;
+
+}
+.user:hover {
+  color: black;
+}
+.card:hover {
+  color: black;
+
+}
+.menu-item {
+  padding: 10px; 
+  cursor: pointer;
+  transition: background-color 0.3s;
+  height: 70px;
+  margin-top: -8px;
+  font-size: large;
+ 
+}
+
+
+
+.he {
+  display: flex;
+  align-items: center; 
+}
+
+.uc {
+  display: flex;
+  align-items: center; 
+ 
+}
+.ant-menu {
+  background-color :rgba(78, 166, 37, 0.533);
+color: white;}
+
+
+  .ant-menu-dark .ant-menu-item-selected {
+    background-color: white;
+  color: black; }
+  
