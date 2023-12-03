@@ -1,10 +1,14 @@
-
+import React from 'react';
+import { Routes, Route, BrowserRouter } from 'react-router-dom';
+import CategoriesPage from './container/categoriesPage'; // Adjust the path accordingly
 
 function App() {
   return (
-    <>
-    <h1>Hello</h1>
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/category" element={<CategoriesPage />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
