@@ -1,0 +1,24 @@
+.bestProducts {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  overflow: auto;
+}
+.best-product-card {
+  flex: 0 0 auto;
+}
+
+.best-product-card:last-child {
+  margin-right: 0;
+}
+h1 {
+  margin-left: 7%;
+  font-size: 45px;
+}
+
+@media screen and (max-width: 480px) {
+  .bestProducts {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
