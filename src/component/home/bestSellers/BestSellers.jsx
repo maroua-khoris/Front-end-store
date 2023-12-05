@@ -29,9 +29,9 @@ const BestSellers = () => {
   }, []);
 
   return [
-    <div key="bestProducts">
+    <div key="bestProducts" className="bestProducts">
       <h1>Best Sellers</h1>
-      <div key="bestProducts" className="bestProducts">
+      <div key="bestProducts" className="bestProducts-cards">
         {bestProducts.map((product, index) => (
           <div key={index} className="best-product-card">
             <Card
@@ -42,8 +42,8 @@ const BestSellers = () => {
               cover={
                 <img
                   alt={product.product_name}
-                  src={product.product_image}
-                  height="300px"
+                  src={product.product_image[0]}
+                  height="260px"
                 />
               }
             >
@@ -57,7 +57,7 @@ const BestSellers = () => {
                           _id: product._id,
                           name: product.product_name,
                           quantity: 1,
-                          image: product.product_image,
+                          image: product.product_image[0],
                           price: product.price,
                           colors: product.color,
                         })

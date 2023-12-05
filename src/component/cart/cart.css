@@ -1,17 +1,13 @@
-.cart-container {
-  padding: 0 20px 0 20px;
-}
-
 /* Cart header styles */
 .cart-header {
   width: 100%;
-  height: 85px;
+  height: 65px;
   background-color: #f5f7f7;
   color: black;
   display: none;
   grid-template-columns: repeat(5, 1fr);
   place-content: center;
-  font-size: 19px;
+  font-size: 11px;
   font-weight: bold;
 }
 
@@ -54,19 +50,20 @@
 .cart-totals {
   display: flex;
   justify-content: flex-end;
-  margin-top: 1rem;
-  margin-right: 70px;
+  margin-top: 7px;
+  margin-right: 60px;
 }
 
 /* Styling for Cart totals container */
 .cart-totals-container {
-  width: 500px;
+  width: 300px;
   display: flex;
   flex-direction: column;
 }
 
 /* Styling for Cart totals heading */
 .cart-totals-heading {
+  font-size: 25px;
   font-weight: bold;
   text-align: right;
 }
@@ -92,8 +89,8 @@
   display: flex;
   justify-content: center;
   justify-items: center;
-  font-weight: 500;
-  font-size: 22px;
+  font-weight: 600;
+  font-size: 14px;
 }
 
 .cart-totals-row1 {
@@ -111,42 +108,19 @@
   justify-content: center;
   justify-items: center;
   font-weight: 600;
-  font-size: 25px;
+  font-size: 18px;
 }
 
 /* Styling for Cart totals values */
 .cart-totals-value {
   font-family: Poppins, sans-serif;
   font-weight: 700;
-  font-size: 23px;
+  font-size: 15px;
 }
 .totals-value {
   font-family: Poppins, sans-serif;
   font-weight: 800;
-  font-size: 23px;
-}
-
-/* Styling for Proceed to Checkout button */
-.checkout-button {
-  display: flex;
-  justify-content: flex-end;
-  margin-top: 50px;
-}
-
-.proceed-checkout {
-  background-color: #303030;
-  color: #ffffff;
-  width: 260px;
-  height: 55px;
-  text-decoration: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 23px;
-}
-
-.proceed-checkout:hover {
-  background-color: rgb(0, 0, 0);
+  font-size: 14px;
 }
 
 .empty-cart-section {
@@ -154,4 +128,92 @@
   justify-content: center;
   align-items: center;
   margin-top: 10%;
+}
+
+/* aaaaaaaaaaaaaaa */
+.row {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+}
+
+.city-zip {
+  display: flex;
+  justify-content: space-between;
+  width: 85%;
+}
+
+.city {
+  flex: 63%;
+  margin-right: 5px;
+}
+
+.zip {
+  flex: 30%;
+}
+
+.container {
+  background-color: rgb(206, 245, 216);
+  border-radius: 10px;
+  margin-top: 30px;
+}
+
+.col-25 {
+  flex: 53%;
+  margin-top: 25px;
+  margin-bottom: 30px;
+}
+
+.col-75 {
+  flex: 43%;
+}
+
+.col-25,
+.col-50,
+.col-75 {
+  padding: 16px 16px 0;
+}
+
+input[type="text"] {
+  width: 80%;
+  margin-bottom: 20px;
+  padding: 14px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+label {
+  margin-bottom: 10px;
+  display: block;
+}
+
+.icon-container {
+  margin-bottom: 20px;
+  padding: 7px 0;
+  font-size: 24px;
+}
+
+.btn {
+  background-color: #04aa6d;
+  color: white;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  width: 100%;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 17px;
+}
+
+.btn:hover {
+  background-color: #45a049;
+}
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other (and change the direction - make the "cart" column go on top) */
+@media (max-width: 800px) {
+  .row {
+    flex-direction: column-reverse;
+  }
+  .col-25 {
+    margin-bottom: 20px;
+  }
 }

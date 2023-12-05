@@ -70,8 +70,8 @@ const NewArrival = () => {
               cover={
                 <img
                   alt={product.product_name}
-                  src={product.product_image}
-                  height="300px"
+                  src={product.product_image[0]}
+                  height="260px"
                 />
               }
             >
@@ -85,7 +85,7 @@ const NewArrival = () => {
                           _id: product._id,
                           name: product.product_name,
                           quantity: 1,
-                          image: product.product_image,
+                          image: product.product_image[0],
                           price: product.price,
                           colors: product.color,
                         })

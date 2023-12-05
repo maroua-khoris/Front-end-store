@@ -6,11 +6,11 @@ import why3 from "../../../assets/homeSlider/why3.webp";
 const WhyBazaar = () => {
   return (
     <div className="why-container">
-      <h1>Why Buy From Bazaar</h1>
+      <h1>Why Bazaar's Products</h1>
       <div className="why-content">
         <div className="why">
           <img src={why1} alt="whyBazaar" />
-          <p>Our products are crafted by skilled artisans hands</p>
+          <p>They are crafted by skilled artisans hands</p>
         </div>
         <div className="why">
           <img src={why2} alt="whyBazaar" />

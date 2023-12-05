@@ -19,8 +19,6 @@ const HomeSlider = () => {
 
   return (
     <div className="container">
-      <div className="bar">BAZAAR</div>
-
       <div className="slider">
         <Carousel
           responsive={{

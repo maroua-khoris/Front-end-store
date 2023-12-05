@@ -13,7 +13,7 @@
   display: flex;
   align-items: center;
   gap: 1rem;
-  margin-left: 1rem;
+  margin-left: 5px;
 }
 
 /* Delete icon styles */
@@ -21,7 +21,7 @@
   color: #3e3e3e;
   cursor: pointer;
   transition: color 0.3s;
-  font-size: 30px;
+  font-size: 18px;
 }
 
 .delete-icon:hover {
@@ -30,14 +30,15 @@
 
 /* Product image styles */
 .product-image {
-  width: 150px;
-  height: 150px;
+  width: 100px;
+  height: 100px;
+  padding: 6px 0;
 }
 
 /* Product name styles */
 .product-name {
   font-weight: 600;
-  font-size: 21px;
+  font-size: 13px;
   font-family: Poppins, sans-serif;
   margin-left: 0;
 }
@@ -48,7 +49,6 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.75rem 1rem;
   gap: 0.75rem;
 }
 
@@ -58,7 +58,7 @@
   display: flex;
   align-items: center;
   font-family: sans-serif;
-  font-size: 25px;
+  font-size: 12px;
   font-weight: 700;
 }
 
@@ -67,9 +67,9 @@
   width: 33.3333%;
   display: flex;
   align-items: center;
-  gap: 1.5rem;
+  gap: 1.1rem;
   font-size: 1rem;
-  margin-left: 20px;
+  margin-left: 5px;
 }
 
 /* Quantity button styles */
@@ -94,7 +94,7 @@
 
 /* Quantity value styles */
 .quantity-value {
-  font-size: 25px;
+  font-size: 14px;
   font-weight: 600;
 }
 
@@ -105,7 +105,7 @@
   margin-left: 60px;
   align-items: center;
   font-family: sans-serif;
-  font-size: 1.6rem;
+  font-size: 15px;
   font-weight: 700;
 }
 

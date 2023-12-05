@@ -1,4 +1,4 @@
-.bestProducts {
+.bestProducts-cards {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -11,14 +11,18 @@
 .best-product-card:last-child {
   margin-right: 0;
 }
-h1 {
+.bestProducts h1 {
   margin-left: 7%;
-  font-size: 45px;
+  font-size: 38px;
 }
 
 @media screen and (max-width: 480px) {
-  .bestProducts {
+  .bestProducts-cards {
     flex-wrap: wrap;
     justify-content: center;
+  }
+
+  .bestProducts {
+    margin-top: 150px;
   }
 }
