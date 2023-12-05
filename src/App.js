@@ -2,9 +2,9 @@ import { Routes, Route, BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import { store } from "./redux/store.js";
 import Home from "./container/HomePage";
-import CartView from "./container/cartPage";
-import Header from "../src/component/header.js";
-import Footer from "../src/component/footer.js";
+import CartView from "./container/checkoutPage.js";
+import Header from "./component/header/header.js";
+import Footer from "./component/footer/footer.js";
 
 function App() {
   return (

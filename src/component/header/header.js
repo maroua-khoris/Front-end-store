@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { Layout, Menu } from "antd";
-import imglogo from "../assets/Captureqq.PNG";
+import imglogo from "../../assets/Captureqq.PNG";
 import {
   ShoppingCartOutlined,
   UserOutlined,
   MenuUnfoldOutlined,
   MenuFoldOutlined,
 } from "@ant-design/icons";
-import "../styling/style.css";
+import "./style.css";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 

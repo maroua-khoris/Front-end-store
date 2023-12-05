@@ -1,6 +1,6 @@
 import React from "react";
 import { Layout } from "antd";
-import imglogo from "../assets/0da783cb9ab23e2dc0c5ce3516d62e45.png";
+import imglogo from "../../assets/0da783cb9ab23e2dc0c5ce3516d62e45.png";
 import {
   PhoneOutlined,
   MailOutlined,
@@ -8,7 +8,7 @@ import {
   FacebookOutlined,
   LinkedinOutlined,
 } from "@ant-design/icons";
-import "../styling/footer.css";
+import "./footer.css";
 const { Footer } = Layout;
 
 const AppFooter = () => {

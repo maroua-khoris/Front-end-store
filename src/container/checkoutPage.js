@@ -1,11 +1,11 @@
-import CheckoutView from "../component/checkout/checkout";
+import Cart from "../component/checkout/Checkout";
 
-const Checkout = () => {
+const CartView = () => {
   return (
     <div>
-      <CheckoutView />
+      <Cart />
     </div>
   );
 };
 
-export default Checkout;
+export default CartView;
