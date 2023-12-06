@@ -1,7 +1,6 @@
-
 import React from "react";
 import { Layout } from "antd";
-import imglogo from "../assets/0da783cb9ab23e2dc0c5ce3516d62e45.png";
+import imglogo from "../../assets/0da783cb9ab23e2dc0c5ce3516d62e45.png";
 import {
   PhoneOutlined,
   MailOutlined,
@@ -9,7 +8,7 @@ import {
   FacebookOutlined,
   LinkedinOutlined,
 } from "@ant-design/icons";
-import "../styling/footer.css"; 
+import "./footer.css";
 const { Footer } = Layout;
 
 const AppFooter = () => {
@@ -20,13 +19,16 @@ const AppFooter = () => {
           <div>
             <img className="loOgo" src={imglogo} alt="logo" />
           </div>
-          <p class="baz">
-          Discover handcrafted wonders, from textiles to woodwork, bringing global craftsmanship to your doorstep. Embrace the unique and add cultural charm to your life with every piece telling a story. Welcome to Bazaar.
+          <p className="baz">
+            Discover handcrafted wonders, from textiles to woodwork, bringing
+            global craftsmanship to your doorstep. Embrace the unique and add
+            cultural charm to your life with every piece telling a story.
+            Welcome to Bazaar.
           </p>
         </div>
         <div id="category-container" className="con">
           <h1> Categories:</h1>
-          <ul className="category-list" class="baz">
+          <ul className="category-list">
             <li className="category-item">Men</li>
             <li className="category-item">Women</li>
             <li className="category-item">Accessoires</li>
@@ -37,10 +39,10 @@ const AppFooter = () => {
           <h1>CONTACT US:</h1>
           <div className="contact">
             <div>
-              <div className="it" class="baz">
+              <div className="it">
                 <PhoneOutlined /> +212617209222
               </div>
-              <div className="it" class="baz">
+              <div className="it">
                 <MailOutlined /> bazaarark@gmail.com
               </div>
               <br></br>

@@ -10,6 +10,9 @@ import {
   MenuFoldOutlined,
 } from "@ant-design/icons";
 import { NavLink } from "react-router-dom";
+import "./style.css";
+import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const { Header } = Layout;
 
@@ -21,13 +24,14 @@ const Headerr = () => {
   const [collapsed, setCollapsed] = useState(false);
   const [isResponsive, setIsResponsive] = useState(false);
   const breakpoint = 768;
+  const products = useSelector((state) => state.cartReducer.products);
 
   useEffect(() => {
     const handleResize = () => {
       setIsResponsive(window.innerWidth <= breakpoint);
     };
 
-    handleResize(); 
+    handleResize();
     window.addEventListener("resize", handleResize);
 
     return () => {
@@ -50,7 +54,9 @@ const Headerr = () => {
     <Layout className="layout whiteLayout" >
       <Header id="header">
         <div>
-          <img className="logo" src={imglogo} alt="logo" />
+          <Link to="/">
+            <img className="logo" src={imglogo} alt="logo" />
+          </Link>
         </div>
         {isResponsive ? (
           <div className="trigger" onClick={toggleCollapsed}>
@@ -66,6 +72,7 @@ const Headerr = () => {
            ))}
           </Menu>
         )}
+        <p>{products.length}</p>
 
         <div className="he">
           <div className="card">
@@ -78,21 +85,22 @@ const Headerr = () => {
               </div>
             </div>
           </div>
+
           <div className="user">
             <UserOutlined style={{ transform: "translate(10px, -12px)" }} />
           </div>
         </div>
       </Header>
       {isResponsive && collapsed && (
-           <Menu theme="dark" mode="vertical" defaultSelectedKeys={["1"]}>
-           {categories.map((category, index) => (
-             <SubMenu key={index} title={category.name}>
-               {category.subcategories.map((subcat, subIndex) => (
-                 <Menu.Item key={`${index}-${subIndex}`}>{subcat}</Menu.Item>
-               ))}
-             </SubMenu>
-           ))}
-         </Menu>
+        <Menu theme="dark" mode="vertical" defaultSelectedKeys={["1"]}>
+          {categories.map((category, index) => (
+            <SubMenu key={index} title={category.name}>
+              {category.subcategories.map((subcat, subIndex) => (
+                <Menu.Item key={`${index}-${subIndex}`}>{subcat}</Menu.Item>
+              ))}
+            </SubMenu>
+          ))}
+        </Menu>
       )}
     </Layout>
   );

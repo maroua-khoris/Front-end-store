@@ -1,0 +1,122 @@
+/* Item card container styles */
+.item-card-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  margin-bottom: 1rem;
+  border: 1px solid #cbd5e0;
+}
+
+/* Item card info styles */
+.item-card-info {
+  grid-column: span 5;
+  display: flex;
+
+  align-items: center;
+  gap: 1rem;
+  margin-left: 5px;
+}
+
+/* Delete icon styles */
+.delete-icon {
+  color: #3e3e3e;
+  cursor: pointer;
+  transition: color 0.3s;
+  font-size: 18px;
+}
+
+.delete-icon:hover {
+  color: rgb(180, 58, 58);
+}
+
+/* Product image styles */
+.product-image {
+  width: 100px;
+  height: 100px;
+  padding: 6px 0;
+}
+
+/* Product name styles */
+.product-name {
+  font-weight: 600;
+  font-size: 13px;
+  font-family: Poppins, sans-serif;
+  margin-left: 0;
+}
+
+/* Item card details styles */
+.item-card-details {
+  grid-column: span;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+/* Price styles */
+.price {
+  width: 33.3333%;
+  display: flex;
+  align-items: center;
+  font-family: sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* Quantity styles */
+.quantity {
+  width: 33.3333%;
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+  font-size: 1rem;
+  margin-left: 5px;
+}
+
+/* Quantity button styles */
+.quantity-btn {
+  width: 1.8rem;
+  height: 1.8rem;
+  background-color: rgb(219, 219, 219);
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-size: 22px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.3s, border 0.3s;
+  border: 1px solid #cbd5e0;
+}
+
+.quantity-btn:hover {
+  background-color: rgb(141, 135, 135);
+  border: 1px solid #cbd5e0;
+}
+
+/* Quantity value styles */
+.quantity-value {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* Total amount styles */
+.total-amount {
+  width: 33.3333%;
+  display: flex;
+  margin-left: 60px;
+  align-items: center;
+  font-family: sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+/* Media query for medium-sized screens */
+@media (min-width: 768px) {
+  .item-card-info {
+    grid-column: span 2;
+  }
+
+  .item-card-details {
+    grid-column: span 3;
+  }
+}
