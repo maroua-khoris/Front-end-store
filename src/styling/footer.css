@@ -58,3 +58,6 @@
     justify-content: center;
   }
 }
+:where(.css-dev-only-do-not-override-1g853jt).ant-layout-footer {
+  background-color: rgb(200, 224, 180)! important;
+}

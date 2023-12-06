@@ -6,7 +6,8 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/category" element={<CategoriesPage />} />
+        <Route path="/category/:name"
+                        element={<CategoriesPage/>}/>
       </Routes>
     </BrowserRouter>
   );

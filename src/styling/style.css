@@ -123,6 +123,9 @@ body {
   font-size: large;
  
 }
+:where(.css-dev-only-do-not-override-1g853jt) a {
+  color: black! important;
+}
 
 
 
@@ -137,11 +140,21 @@ body {
  
 }
 .ant-menu {
-  background-color :rgba(78, 166, 37, 0.533);
-color: white;}
+  background-color :white;
+color: black;}
 
 
-  .ant-menu-dark .ant-menu-item-selected {
+.ant-menu-dark .ant-menu-item-selected {
     background-color: white;
   color: black; }
+.card-popup{
+  position: absolute;
+  background-color: white;
+  top: 9%;
+  right: 1%;
+  width: 30%;
+  height: 40%;
+  z-index: 1;
+  border-radius: 10px;
+}
   

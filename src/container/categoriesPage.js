@@ -1,25 +1,28 @@
-import React, { useState } from 'react';
-import {
-    UploadOutlined,
-    UserOutlined,
-    VideoCameraOutlined,
-  } from '@ant-design/icons';
-import { Breadcrumb, Layout, Menu, theme, Card,Slider, Divider,DatePicker} from 'antd';
+import React, { useEffect, useState } from 'react';
+import {  Layout, Menu, theme, Card,Slider, Divider,DatePicker} from 'antd';
 import { ShoppingCartOutlined,HeartOutlined,AppstoreOutlined  } from '@ant-design/icons';
 import '../styling/style.css';
 import img1 from '../assets/verre (2).jpg';
 import img2 from '../assets/verre.jpg';
-import imgBackground from '../assets/background.jpg';
+import imgBackground from '../assets/background.png';
+import Header from '../component/header';
+import Footer from '../component/footer'
+import { getProducts } from '../services/productsApi';
+import { useDispatch, useSelector } from 'react-redux';
+import { getSubcategories } from '../services/categoryApi';
+import { useParams } from 'react-router';
 
-const { Content, Sider,Header } = Layout;
+
+const { Content, Sider } = Layout;
 const { Meta } = Card;
 
 
-function ShopCard({ cardKey }) {
+function ShopCard({ cardKey, product}) {
     const [isHovered, setIsHovered] = useState(false);
     const imgPath = isHovered
-    ?  img2// Replace with the URL of your hover image
-    : img1;
+    ?  product.product_image[1]// Replace with the URL of your hover image
+    : product.product_image[0];
+    console.log('product', product)
   
     return (
       <Card
@@ -31,6 +34,7 @@ function ShopCard({ cardKey }) {
           position: 'relative',
           transition: 'transform 0.3s',
           transform: isHovered ? 'scale(1.1)' : 'scale(1)',
+          maxHeight: "420px",
         }}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
@@ -47,9 +51,9 @@ function ShopCard({ cardKey }) {
             </div>
           </>
         )}
-        <Meta title="Tea Glasses" description="A short description of the product." />
+        <Meta title={product.product_name} description={product.short_description} />
         <div className='price'>
-            <p>80 DH</p>
+            <p>{product.price}</p>
         </div>
       </Card>
     );
@@ -57,22 +61,31 @@ function ShopCard({ cardKey }) {
   
 
 function CategoriesPage() {
-    const [isHovered, setIsHovered] = useState(false);
-  const {
-    token: { colorBgContainer },
-  } = theme.useToken();
+  const dispatch = useDispatch();
+  const products = useSelector(state => state.data.products);
+  const subcategories = useSelector(state => state.data.subcategories);
+  const [subcategory, setSubcategory] = useState('');
+  const { name } = useParams();
+   useEffect(() => {
+    const fetchData = async () => {
+      try {
+        await getProducts(dispatch);
+        await getSubcategories(dispatch);
+      } catch (error) {
+        console.error(error);
+      }
+    };
 
+    fetchData();
+  }, []);
+  const handleFilter = (event, name)=> {
+    setSubcategory(name);
+    console.log('subcategory', subcategory)
+  }
+  
   return (
     <>
-    <Header
-    style={{
-      display: 'flex',
-      alignItems: 'center',
-      backgroundColor: 'white'
-    }}
-  >
-    <div className="demo-logo" />
-  </Header>
+    <Header/>
     <Layout style={{ minHeight: '100vh'}}>
          <Layout
         style={{
@@ -84,33 +97,35 @@ function CategoriesPage() {
       <Sider
         width="20%"
         style={{
-          height: '50%',
           backgroundColor: "white",
-          borderRadius: '10px'
         }}
       >
-        <Menu
-          theme="light"
-          mode="inline"
-          style={{
-            padding: "30px 10px 10px",
-            fontSize: "16px",
-            fontFamily: "-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,'Noto Sans',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji'"
-          }}
-          defaultSelectedKeys={['1']}
-          items={[
-            {
-              key: '1',
-              icon: <AppstoreOutlined />,
-              label: 'Subcategory 1',
-            },
-            {
-              key: '2',
-              icon: <AppstoreOutlined />,
-              label: 'Subcategory 2',
-            },
-          ]}
-        />
+     <Menu
+  theme="light"
+  mode="inline"
+  style={{
+    padding: "30px 10px 10px",
+    fontSize: "16px",
+    fontFamily: "-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,'Noto Sans',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji'"
+  }}
+  defaultSelectedKeys={['1']}
+>
+  {subcategories
+    .filter((subcategory) => subcategory.category_name === "Home")
+    .map((subcategory, index) => (
+      <Menu.Item
+        key={index.toString()} // Use the index as the key
+        icon={<AppstoreOutlined />}
+        onClick={(e)=> handleFilter(e, subcategory.subcategory_name)}
+      >
+        {subcategory.subcategory_name}
+      </Menu.Item>
+    ))}
+</Menu>
+
+
+  
+
         <Divider />
         <p style={{
             margin: "20px 35px",
@@ -140,21 +155,26 @@ function CategoriesPage() {
     />
         
       </Sider>
-     <Layout style={{ backgroundColor: "transparent"}}>
+      <Layout style={{ backgroundColor: "transparent"}}>
         
-          <Content
-            style={{
-              display: 'flex',
-              flexWrap: 'wrap',
-            }}
-          >
-           {[1, 2, 3, 4,5,6,7,8,9].map((key) => (
-        <ShopCard key={key} cardKey={key} />
-      ))}
-          </Content>
-          </Layout>
+        <Content
+          style={{
+            display: 'flex',
+            flexWrap: 'wrap',
+          }}
+        >
+       {!!products && products
+        .filter((product) => product.category_name === name &&
+        (!subcategory || (product.subcategory_name === subcategory))
+          )
+        .map((product, index) => (
+          <ShopCard key={index} cardKey={index} product={product} />
+        ))}
+        </Content>
+        </Layout>
         </Layout>
       </Layout>
+      <Footer />
       </>
   );
 }
