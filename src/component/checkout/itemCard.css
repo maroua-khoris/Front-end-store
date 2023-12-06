@@ -14,7 +14,7 @@
 
   align-items: center;
   gap: 1rem;
-  margin-left: 5px;
+  margin-left: 3px;
 }
 
 /* Delete icon styles */
@@ -31,9 +31,9 @@
 
 /* Product image styles */
 .product-image {
-  width: 100px;
-  height: 100px;
-  padding: 6px 0;
+  width: 110px;
+  height: 110px;
+  padding: 3px 0;
 }
 
 /* Product name styles */

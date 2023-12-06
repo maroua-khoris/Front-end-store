@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
+
 import { resetCart } from "../../redux/cartSlice";
-import emptyCart from "../../assets/cart/emptyCart.png";
 import ItemCard from "./ItemCard";
-import "./cart.css";
+import "./checkout.css";
 
 const Cart = () => {
   const dispatch = useDispatch();
@@ -42,18 +41,6 @@ const Cart = () => {
                 <h3>Billing Address</h3>
 
                 <input
-                  placeholder="Full Name"
-                  type="text"
-                  id="fname"
-                  name="firstname"
-                />
-                <input
-                  placeholder="Email"
-                  type="text"
-                  id="email"
-                  name="email"
-                />
-                <input
                   placeholder="Address"
                   type="text"
                   id="adr"
@@ -73,6 +60,12 @@ const Cart = () => {
                     className="zip"
                   />
                 </div>
+                <input
+                  placeholder="Phone"
+                  type="text"
+                  id="phone"
+                  name="phone"
+                />
               </div>
 
               <div className="col-50">
@@ -112,80 +105,53 @@ const Cart = () => {
 
       <div className="col-25">
         <div className="cart-container">
-          {products.length > 0 ? (
-            <div className="pb-20">
-              <div className="cart-header">
-                <h2 className="column-header">Product</h2>
-                <h2>Price</h2>
-                <h2>Quantity</h2>
-                <h2>Sub Total</h2>
-              </div>
-              <div className="cart-items-container">
-                {products.map((item) => (
-                  <div key={item._id}>
-                    <ItemCard item={item} />
-                  </div>
-                ))}
-              </div>
-
+          <div className="pb-20">
+            <div className="cart-header">
+              <h2 className="column-header">Product</h2>
+              <h2>Price</h2>
+              <h2>Quantity</h2>
+              <h2>Sub Total</h2>
+            </div>
+            <div className="cart-items-container">
+              {products.map((item) => (
+                <div key={item._id}>
+                  <ItemCard item={item} />
+                </div>
+              ))}
+            </div>
+            <Link to="/empty-card">
               <button
                 onClick={() => dispatch(resetCart())}
                 className="reset-btn"
               >
                 Reset cart
               </button>
+            </Link>
 
-              <div className="cart-totals">
-                <div className="cart-totals-container">
-                  <h1 className="cart-totals-heading">Cart totals</h1>
-                  <div className="cart-totals-details">
-                    <div className="cart-totals-row1 ">
-                      <span className="cart-totals-label">Subtotal</span>
-                      <span className="cart-totals-value ">{totalAmt} DH</span>
-                    </div>
-                    <div className="cart-totals-row1">
-                      <span className="cart-totals-label">Shipping Charge</span>
-                      <span className="cart-totals-value">
-                        {shippingCharge} DH
-                      </span>
-                    </div>
-                    <div className="cart-totals-row">
-                      <span className="totals-label">Total</span>
-                      <span className="totals-value">
-                        {totalAmt + shippingCharge} DH
-                      </span>
-                    </div>
+            <div className="cart-totals">
+              <div className="cart-totals-container">
+                <h1 className="cart-totals-heading">Cart totals</h1>
+                <div className="cart-totals-details">
+                  <div className="cart-totals-row1 ">
+                    <span className="cart-totals-label">Subtotal</span>
+                    <span className="cart-totals-value ">{totalAmt} DH</span>
+                  </div>
+                  <div className="cart-totals-row1">
+                    <span className="cart-totals-label">Shipping Charge</span>
+                    <span className="cart-totals-value">
+                      {shippingCharge} DH
+                    </span>
+                  </div>
+                  <div className="cart-totals-row">
+                    <span className="totals-label">Total</span>
+                    <span className="totals-value">
+                      {totalAmt + shippingCharge} DH
+                    </span>
                   </div>
                 </div>
               </div>
             </div>
-          ) : (
-            <motion.div
-              initial={{ y: 30, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.4 }}
-              className="empty-cart-section"
-            >
-              <div>
-                <img
-                  className="empty-cart-image"
-                  src={emptyCart}
-                  alt="emptyCart"
-                />
-              </div>
-              <div className="empty-cart-message">
-                <h1 className="empty-cart-title">Your Cart feels lonely.</h1>
-                <p className="empty-cart-text">
-                  Your Shopping cart lives to serve. Give it a purpose...
-                </p>
-                <Link to="/">
-                  <button className="proceed-checkout">
-                    Continue Shopping
-                  </button>
-                </Link>
-              </div>
-            </motion.div>
-          )}
+          </div>
         </div>
       </div>
     </div>

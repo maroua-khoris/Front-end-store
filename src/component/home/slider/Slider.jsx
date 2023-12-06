@@ -1,20 +1,21 @@
-import img1 from "../../../assets/homeSlider/img1.jpg";
+/*import img1 from "../../../assets/homeSlider/img1.jpg";
 import img2 from "../../../assets/homeSlider/img2.jpg";
 import img3 from "../../../assets/homeSlider/img3.jpg";
 import img4 from "../../../assets/homeSlider/img4.jpg";
-import img5 from "../../../assets/homeSlider/img5.jpg";
+import img5 from "../../../assets/homeSlider/img5.jpg";*/
+import vid1 from "../../../assets/homeSlider/vid1.mp4";
+import vid2 from "../../../assets/homeSlider/vid2.mp4";
+import vid3 from "../../../assets/homeSlider/vid3.mp4";
 
 import Carousel from "react-multi-carousel";
 import "./slider.css";
 import "react-multi-carousel/lib/styles.css";
 
 const HomeSlider = () => {
-  const images = [
-    { image: img1, buttonText: "Learn More", link: "#" },
-    { image: img2, buttonText: "Shop Now", link: "#" },
-    { image: img3, buttonText: "Explore", link: "#" },
-    { image: img4, buttonText: "Explore", link: "#" },
-    { image: img5, buttonText: "Explore", link: "#" },
+  const videos = [
+    { video: vid3, buttonText: "Shop Now", link: "#" },
+    { video: vid1, buttonText: "Learn More", link: "#" },
+    { video: vid2, buttonText: "Shop Now", link: "#" },
   ];
 
   return (
@@ -37,18 +38,18 @@ const HomeSlider = () => {
           }}
           infinite={true}
           autoPlay={true}
-          autoPlaySpeed={2000}
+          autoPlaySpeed={3100}
           customTransition="transform 500ms ease-in-out"
           arrows={false}
         >
-          {images.map((slide, index) => (
+          {videos.map((slide, index) => (
             <div key={index} className="each-slide">
-              <img src={slide.image} alt={`slide-${index}`} />
+              <video src={slide.video} muted autoPlay loop />
               <div className="text-block">
                 <h3>
                   Welcome to a world where every purchase is a celebration of
                   culture, Step into the heart of Moroccan craftsmanship at our
-                  artisan store. Explore the magic of Morocco with us.
+                  artisan store.
                 </h3>
 
                 <button>Shop Now</button>

@@ -77,15 +77,29 @@ const Headerr = () => {
             ))}
           </Menu>
         )}
-        <p>{products.length}</p>
 
         <div className="he">
           <div className="card-header">
-            <Link to="/cart">
-              <ShoppingCartOutlined
-                style={{ transform: "translate(10px, -12px)" }}
-              />
-            </Link>
+            {products.length > 0 ? (
+              <Link to="/cart" className="cart-icon-container">
+                <div className="icon-button">
+                  <ShoppingCartOutlined
+                    style={{ transform: "translate(10px, -12px)" }}
+                    className="cart-icon"
+                  />
+                  <span className="icon-button__badge">{products.length}</span>
+                </div>
+              </Link>
+            ) : (
+              <Link to="/empty-card" className="cart-icon-container">
+                <div className="icon-button">
+                  <ShoppingCartOutlined
+                    style={{ transform: "translate(10px, -12px)" }}
+                    className="cart-icon"
+                  />
+                </div>
+              </Link>
+            )}
           </div>
 
           <div className="user">

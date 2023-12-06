@@ -1,0 +1,24 @@
+.empty-cart-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10%;
+}
+
+.empty-cart-message {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.proceed-checkout {
+  padding: 15px 43px;
+  background-color: #000000;
+  color: #ffffff;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin: 20px 0 45px;
+  transition-duration: 0.3s;
+  font-size: 19px;
+  border: #000000;
+}

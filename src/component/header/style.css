@@ -1,8 +1,13 @@
 #header {
+  top: 0;
+  left: 0;
+  right: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: white;
+  z-index: 1000; /* Adjust the z-index to ensure it's above other elements */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow for a visual effect */
 }
 
 .ant-layout-header.custom-header {
@@ -40,17 +45,48 @@ body {
   margin: 0;
 }
 
-.card-header {
-  font-size: 20px;
-  margin: 9px;
-  color: white;
-  cursor: pointer;
-  transition: background-color 0.3s;
-  background-color: rgba(78, 166, 37, 0.533);
-  height: 40px;
-  width: 40px;
-  border-radius: 30px;
+.he {
+  display: flex;
+  align-items: center;
 }
+
+.icon-button {
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  color: #ffffff;
+  background: rgba(78, 166, 37, 0.533);
+  border: none;
+  outline: none;
+  border-radius: 50%;
+  font-size: 20px;
+}
+
+.icon-button:hover {
+  cursor: pointer;
+
+  color: black;
+}
+
+.icon-button__badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  min-width: 20px;
+  height: 20px;
+  background: red;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  font-size: 12px;
+}
+
+/* ... Your existing styles ... */
+
 .user {
   font-size: 20px;
   margin: 9px;
@@ -65,9 +101,7 @@ body {
 .user:hover {
   color: black;
 }
-.card-header:hover {
-  color: black;
-}
+
 .menu-item {
   padding: 10px;
   cursor: pointer;
@@ -75,11 +109,6 @@ body {
   height: 70px;
   margin-top: -8px;
   font-size: large;
-}
-
-.he {
-  display: flex;
-  align-items: center;
 }
 
 .uc {
