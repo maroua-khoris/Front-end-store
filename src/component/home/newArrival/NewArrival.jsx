@@ -38,7 +38,7 @@ const NewArrival = () => {
     const lastProduct = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:5000/api/products/last"
+          "http://localhost:4000/api/products/last"
         );
         setLastProducts(response.data.docs);
       } catch (error) {
