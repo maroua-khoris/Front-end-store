@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Layout, Menu } from "antd";
-import imglogo from "../../assets/Captureqq.PNG";
+import imglogo from "../../assets/imgLogo.png";
 import {
   ShoppingCartOutlined,
   UserOutlined,
+  HeartOutlined,
   MenuUnfoldOutlined,
   MenuFoldOutlined,
 } from "@ant-design/icons";
@@ -15,11 +16,24 @@ const { Header } = Layout;
 
 const SubMenu = Menu.SubMenu;
 
-const Headerr = () => {
+const Headerr = ({ isScrolled, style }) => {
+  const headerStyles = {
+    backgroundColor:
+      style?.backgroundColor || (isScrolled ? "white" : "transparent"),
+    color: style?.backgroundColor || (isScrolled ? "black" : "white"),
+
+    boxShadow:
+      style?.boxShadow ||
+      (isScrolled ? "0 2px 4px rgba(0, 0, 0, 0.1)" : "none"),
+    transition: "background-color 0.3s, box-shadow 0.3s",
+    position: style?.position || "fixed",
+  };
+
   const [collapsed, setCollapsed] = useState(false);
   const [isResponsive, setIsResponsive] = useState(false);
   const breakpoint = 768;
-  const products = useSelector((state) => state.cartReducer.products);
+  const products = useSelector((state) => state.cart.products);
+  const wishList = useSelector((state) => state.wish.wishList);
 
   useEffect(() => {
     const handleResize = () => {
@@ -47,7 +61,7 @@ const Headerr = () => {
 
   return (
     <Layout className="layout whiteLayout">
-      <Header id="header">
+      <Header id="header" style={headerStyles}>
         <div>
           <Link to="/">
             <img className="logo" src={imglogo} alt="logo" />
@@ -58,7 +72,17 @@ const Headerr = () => {
             {collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
           </div>
         ) : (
-          <Menu theme="dark" mode="horizontal">
+          <Menu
+            theme="dark"
+            mode="horizontal"
+            style={{
+              backgroundColor:
+                style?.backgroundColor ||
+                (isScrolled ? "white" : "transparent"),
+
+              color: style?.color || (isScrolled ? "black" : "white"),
+            }}
+          >
             {categories.map((category, index) => (
               <SubMenu key={index} title={category.name}>
                 {category.subcategories.map((subcat, subIndex) => (
@@ -84,7 +108,10 @@ const Headerr = () => {
               <Link to="/cart" className="cart-icon-container">
                 <div className="icon-button">
                   <ShoppingCartOutlined
-                    style={{ transform: "translate(10px, -12px)" }}
+                    style={{
+                      color: style?.color || (isScrolled ? "black" : "white"),
+                      transform: "translate(10px, -12px)",
+                    }}
                     className="cart-icon"
                   />
                   <span className="icon-button__badge">{products.length}</span>
@@ -94,16 +121,49 @@ const Headerr = () => {
               <Link to="/empty-card" className="cart-icon-container">
                 <div className="icon-button">
                   <ShoppingCartOutlined
-                    style={{ transform: "translate(10px, -12px)" }}
+                    style={{
+                      color: style?.color || (isScrolled ? "black" : "white"),
+                      transform: "translate(10px, -12px)",
+                    }}
                     className="cart-icon"
                   />
                 </div>
               </Link>
             )}
           </div>
-
-          <div className="user">
-            <UserOutlined style={{ transform: "translate(10px, -12px)" }} />
+          <div>
+            {wishList.length > 0 ? (
+              <Link to="/wish-list" className="cart-icon-container">
+                <div className="icon-button">
+                  <HeartOutlined
+                    style={{
+                      color: style?.color || (isScrolled ? "black" : "white"),
+                      transform: "translate(10px, -12px)",
+                    }}
+                    className="cart-icon"
+                  />
+                  <span className="icon-button__badge">{wishList.length}</span>
+                </div>
+              </Link>
+            ) : (
+              <div className="icon-button">
+                <HeartOutlined
+                  style={{
+                    color: style?.color || (isScrolled ? "black" : "white"),
+                    transform: "translate(10px, -12px)",
+                  }}
+                  className="cart-icon"
+                />
+              </div>
+            )}
+          </div>
+          <div className="icon-button">
+            <UserOutlined
+              style={{
+                color: style?.color || (isScrolled ? "black" : "white"),
+                transform: "translate(10px, -12px)",
+              }}
+            />
           </div>
         </div>
       </Header>

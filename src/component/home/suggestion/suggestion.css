@@ -13,7 +13,8 @@
 }
 .sugg-text p {
   font-weight: 600;
-  font-size: 28px;
+  font-size: 25px;
+  font-family: "Poppins", sans-serif;
   width: 93%;
   color: rgb(2, 2, 2);
   margin-top: 15%;

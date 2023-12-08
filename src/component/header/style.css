@@ -5,11 +5,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: white;
-  z-index: 1000; /* Adjust the z-index to ensure it's above other elements */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow for a visual effect */
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-
 .ant-layout-header.custom-header {
   height: 64px;
   padding: 0 50px;
@@ -18,14 +16,15 @@
 }
 
 #header .ant-menu-horizontal .ant-menu-submenu:hover {
-  color: rgb(85, 170, 46) !important;
+  color: rgb(181, 246, 151) !important;
 }
 
 .ant-layout-header .ant-menu {
   line-height: inherit;
-  width: 400px;
   background-color: white;
-  color: black;
+  font-size: 17px;
+  font-weight: 600;
+  width: 450px;
 }
 
 .demo-logo {
@@ -52,16 +51,16 @@ body {
 
 .icon-button {
   position: relative;
+  margin: 5px;
   align-items: center;
   justify-content: center;
   width: 40px;
   height: 40px;
-  color: #ffffff;
-  background: rgba(78, 166, 37, 0.533);
+  color: #000000;
   border: none;
   outline: none;
   border-radius: 50%;
-  font-size: 20px;
+  font-size: 25px;
 }
 
 .icon-button:hover {
@@ -85,19 +84,6 @@ body {
   font-size: 12px;
 }
 
-/* ... Your existing styles ... */
-
-.user {
-  font-size: 20px;
-  margin: 9px;
-  color: white;
-  cursor: pointer;
-  transition: background-color 0.3s;
-  background-color: rgba(78, 166, 37, 0.533);
-  height: 40px;
-  width: 40px;
-  border-radius: 30px;
-}
 .user:hover {
   color: black;
 }
@@ -105,7 +91,6 @@ body {
 .menu-item {
   padding: 10px;
   cursor: pointer;
-  transition: background-color 0.3s;
   height: 70px;
   margin-top: -8px;
   font-size: large;
@@ -117,7 +102,6 @@ body {
 }
 .ant-menu {
   background-color: rgba(78, 166, 37, 0.533);
-  color: white;
 }
 
 .ant-menu-dark .ant-menu-item-selected {

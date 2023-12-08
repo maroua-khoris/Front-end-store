@@ -10,7 +10,14 @@ import {
   REGISTER,
 } from "redux-persist";
 import storage from "redux-persist/lib/storage";
+import { combineReducers } from "@reduxjs/toolkit";
 import cartReducer from "./cartSlice";
+import wishReducer from "./wishSLice";
+
+const rootReducer = combineReducers({
+  cart: cartReducer,
+  wish: wishReducer,
+});
 
 const persistConfig = {
   key: "root",
@@ -18,10 +25,10 @@ const persistConfig = {
   storage,
 };
 
-const persistedReducer = persistReducer(persistConfig, cartReducer);
+const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 export const store = configureStore({
-  reducer: { cartReducer: persistedReducer },
+  reducer: persistedReducer,
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       serializableCheck: {

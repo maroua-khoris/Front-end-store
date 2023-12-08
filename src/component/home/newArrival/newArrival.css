@@ -49,10 +49,12 @@
 .react-multiple-carousel__arrow--right {
   right: calc(1% + 1px) !important;
   top: 140px;
+  z-index: 990;
 }
 .react-multiple-carousel__arrow--left {
   left: calc(1% + 1px) !important;
   top: 140px;
+  z-index: 990;
 }
 
 .badge {
