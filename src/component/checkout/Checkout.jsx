@@ -9,7 +9,7 @@ import "./cart.css";
 
 const Cart = () => {
   const dispatch = useDispatch();
-  const products = useSelector((state) => state.cart.products);
+  const products = useSelector((state) => state.cartReducer.products);
   const [totalAmt, setTotalAmt] = useState("");
   const [shippingCharge, setShippingCharge] = useState("");
 
@@ -117,7 +117,7 @@ const Cart = () => {
               <div className="cart-header">
                 <h2 className="column-header">Product</h2>
                 <h2>Price</h2>
-                
+                <h2>Quantity</h2>
                 <h2>Sub Total</h2>
               </div>
               <div className="cart-items-container">
