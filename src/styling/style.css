@@ -1,0 +1,292 @@
+body {
+    margin: 0px;
+}
+.shopbar {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 2px 1px 2px! important;
+  }
+  :where(.css-dev-only-do-not-override-1g853jt).ant-divider {
+    border-block-start: 2px solid black! important;
+    margin: 10px 0px! important;
+  }
+  .iconProduct {
+    font-size: 28px;
+    margin-bottom: 10px;
+    padding: 8px;
+    border-radius: 30px;
+    color: rgb(96, 147, 103);
+  }
+  :where(.css-dev-only-do-not-override-1g853jt).ant-menu-light .ant-menu-item-selected {
+    background-color: #e6ffed! important;
+}
+:where(.css-dev-only-do-not-override-1g853jt).ant-menu-light .ant-menu-item-selected {
+    color: #0d9321! important;
+}
+:where(.css-dev-only-do-not-override-1g853jt).ant-slider .ant-slider-handle::after {
+    box-shadow: 0 0 0 2px #0d9321! important;
+}
+:where(.css-dev-only-do-not-override-1g853jt).ant-slider .ant-slider-track {
+    background-color: #0d9321! important;
+}
+:where(.css-dev-only-do-not-override-1g853jt).ant-divider {
+    margin: 10px 20px! important;
+}
+:where(.css-dev-only-do-not-override-1g853jt).ant-divider-horizontal {
+    width: 50%! important;
+    min-width: 85%! important;
+}
+#header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+}
+
+.ant-layout-header.custom-header {
+  height: 64px;
+  padding: 0 50px;
+  color: rgba(0, 0, 0, 0.88);
+  line-height: 64px;
+}
+
+#header .ant-menu-horizontal .ant-menu-submenu:hover {
+  color: rgb(85, 170, 46) !important;
+}
+
+.ant-layout-header .ant-menu {
+  line-height: inherit;
+  width: 400px;
+  background-color: white;
+  color: black;
+}
+
+.demo-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  max-width: 100%;
+  max-height: 70px;
+  transform: translate(0%, 15%);
+}
+
+body {
+  display: block;
+  margin: 0;
+}
+
+.card-header {
+  font-size: 20px;
+  margin: 9px;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  background-color: rgba(78, 166, 37, 0.533);
+  height: 40px;
+  width: 40px;
+  border-radius: 30px;
+}
+.user {
+  font-size: 20px;
+  margin: 9px;
+  color: rgb(96, 147, 103);
+  cursor: pointer;
+  transition: background-color 0.3s;
+  height: 40px;
+  width: 40px;
+  border-radius: 30px;
+}
+.user:hover {
+  color: black;
+}
+.card-header:hover {
+  color: black;
+}
+.menu-item {
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  height: 70px;
+  margin-top: -8px;
+  font-size: large;
+}
+:where(.css-dev-only-do-not-override-1g853jt) a {
+  color: black! important;
+}
+
+.he {
+  display: flex;
+  align-items: center;
+}
+
+.uc {
+  display: flex;
+  align-items: center;
+}
+.ant-menu {
+  background-color :white;
+color: black;}
+
+
+.ant-menu-dark .ant-menu-item-selected {
+    background-color: white;
+  color: black; }
+.card-popup {
+    position: absolute;
+    background-color: rgb(242, 244, 240);
+    padding-top: 20px;
+    top: 10%;
+    right: 5%;
+    width: 25%;
+    height: auto;
+    z-index: 1;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 4px 4px 4px 8px rgba(0, 0, 0, 0.1); /* Example shadow: 4px vertical offset, 8px blur, slight transparency */
+  }
+  
+.notif-cart {
+  position: absolute;
+  background-color: red;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%; /* Use 50% to make it a perfect circle */
+  left: 91%;
+  top: 1%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white; /* Add text color for better visibility */
+}
+h2:where(.css-dev-only-do-not-override-1g853jt).ant-typography{
+  font-weight: 500! important;
+    font-size: 15px! important;
+}
+:where(.css-dev-only-do-not-override-1g853jt)[class^="ant-typography"] {
+  font-family: 'Popiline', sans-serif! important;
+}
+:where(.css-dev-only-do-not-override-1g853jt)[class^="ant-btn"], :where(.css-dev-only-do-not-override-1g853jt)[class*=" ant-btn"] {
+  font-family: 'Popiline', sans-serif! important;
+  font-size: 13px! important;
+  font-weight: 600;
+}
+:where(.css-dev-only-do-not-override-1g853jt).ant-btn-primary {
+
+}
+:where(.css-dev-only-do-not-override-1g853jt).ant-btn-primary {
+  background-color: rgb(174, 231, 181);  
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  height: 40px;
+  border-radius: 5px !important;
+  padding-top: 7px;
+  width: 90%;
+  color: black;
+}
+:where(.css-dev-only-do-not-override-1g853jt).ant-btn-primary:hover {
+  background-color: rgb(174, 231, 181)! important;  
+  color: black!important;
+
+}
+:where(.css-dev-only-do-not-override-1g853jt).ant-flex-justify-space-between {
+ justify-content: unset;
+}
+.quantity-value, .quantity-btn {
+  color: black! important;
+}
+.quantity {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.moins, .plus{
+  color: rgb(88, 150, 95);
+  font-size: 30px;
+}
+.number {
+  color: black;
+}
+.price-card {
+  margin-left: 60%;
+  font-family: 'Popiline', sans-serif! important;
+  font-size: 17px! important;
+  color: rgb(88, 150, 95);
+}
+.details {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.notes {
+  font-family: 'Popiline', sans-serif! important;
+  font-size: 13px! important;
+  margin: 0px;
+  text-align: center;
+  color: black;
+  font-weight: 400;
+}
+.total{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.title-total {
+  color: black;
+  font-size: 17px;
+  font-family: 'Popiline', sans-serif;
+}
+.product-container {
+  max-height: 300px; /* Adjust the max height as needed */
+  overflow-y: auto;
+  margin-right: 3px;
+  margin-left: 5px;
+}
+.product-container::-webkit-scrollbar-thumb {
+  background-color: rgb(88, 150, 95); /* Color of the scrollbar thumb */
+  border-radius: 4px; /* Rounded corners for the scrollbar thumb */
+}
+.product-container::-webkit-scrollbar {
+  width: 8px;
+}
+.partie1{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: black;
+  font-size: 16px;
+}
+.subcategories {
+  color: black;
+  font-size: 15px;
+  font-family: 'Popiline', sans-serif;
+  text-transform: uppercase;
+}
+:where(.css-dev-only-do-not-override-1g853jt).ant-divider {
+  width: 100%! important;
+  margin: unset! important;
+}
+#custom-divider {
+  border-block-start: 2px solid rgb(242, 244, 240) !important;
+  margin: 0px !important;
+}
+:where(.css-dev-only-do-not-override-1g853jt).ant-card .ant-card-body {
+  padding: 0px! important;
+  padding-left: 24px! important;
+  padding-right: 24px! important;
+  padding-top: 20px! important;
+}
+:where(.css-dev-only-do-not-override-1g853jt).ant-card .ant-card-meta-title {
+  font-weight: 200!important;
+  font-size: 15px!important;
+}

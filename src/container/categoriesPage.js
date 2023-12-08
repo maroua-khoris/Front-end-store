@@ -2,22 +2,20 @@ import React, { useEffect, useState } from 'react';
 import {  Layout, Menu, theme, Card,Slider, Divider,DatePicker} from 'antd';
 import { ShoppingCartOutlined,HeartOutlined,AppstoreOutlined  } from '@ant-design/icons';
 import '../styling/style.css';
-import img1 from '../assets/verre (2).jpg';
-import img2 from '../assets/verre.jpg';
 import imgBackground from '../assets/background.png';
-import Header from '../component/header';
-import Footer from '../component/footer'
 import { getProducts } from '../services/productsApi';
 import { useDispatch, useSelector } from 'react-redux';
 import { getSubcategories } from '../services/categoryApi';
 import { useParams } from 'react-router';
+import { addToCart } from '../redux/cartSlice';
+
 
 
 const { Content, Sider } = Layout;
 const { Meta } = Card;
 
 
-function ShopCard({ cardKey, product}) {
+function ShopCard({ cardKey, product, dispatch}) {
     const [isHovered, setIsHovered] = useState(false);
     const imgPath = isHovered
     ?  product.product_image[1]// Replace with the URL of your hover image
@@ -27,18 +25,16 @@ function ShopCard({ cardKey, product}) {
     return (
       <Card
         key={cardKey}
-        hoverable
         style={{
           width: '22%', // Adjust the width to show four cards in one line
           margin: '50px 20px 30px 15px',
           position: 'relative',
-          transition: 'transform 0.3s',
-          transform: isHovered ? 'scale(1.1)' : 'scale(1)',
-          maxHeight: "420px",
+          maxHeight: "420px", 
+          boxShadow:'0 0 5px rgba(0, 0, 0, 0.5)'
         }}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
-        cover={<img alt="example" src={imgPath} height='300px' width="100%"  style={{
+        cover={<img alt="example" src={imgPath} height='300px' width="auto"  style={{
             transition: 'transform 0.5s', // Add transition effect here
             transform: isHovered ? 'translateY(-10px)' : 'translateY(0)',
           }}/>}
@@ -46,14 +42,26 @@ function ShopCard({ cardKey, product}) {
         {isHovered && (
           <>
             <div className='shopbar'>
-              <ShoppingCartOutlined className='iconProduct'/>
+              <ShoppingCartOutlined className='iconProduct'  
+              onClick={() =>
+                      dispatch(
+                        addToCart({
+                          _id: product._id,
+                          name: product.product_name,
+                          quantity: 1,
+                          image: product.product_image[0],
+                          price: product.price,
+                          colors: product.color,
+                        })
+                      )
+                    }/>
               <HeartOutlined className='iconProduct'/>
             </div>
           </>
         )}
-        <Meta title={product.product_name} description={product.short_description} />
-        <div className='price'>
-            <p>{product.price}</p>
+        <Meta title={product.product_name} style={{textTransform: "uppercase", fontFamily: "'Popiline', sans-serif"}}/>
+        <div className='price-card' style={{ marginLeft: "0px", marginTop: "10px", fontWeight: "600"}}>
+            <p style={{marginTop: "0px"}}>{product.price} MAD</p>
         </div>
       </Card>
     );
@@ -69,6 +77,7 @@ function CategoriesPage() {
    useEffect(() => {
     const fetchData = async () => {
       try {
+        console.log('first')
         await getProducts(dispatch);
         await getSubcategories(dispatch);
       } catch (error) {
@@ -78,44 +87,51 @@ function CategoriesPage() {
 
     fetchData();
   }, []);
+  console.log('products', products)
   const handleFilter = (event, name)=> {
     setSubcategory(name);
-    console.log('subcategory', subcategory)
-  }
+  };
+  console.log('products.category_name', products.category_name)
   
   return (
     <>
-    <Header/>
+    <Divider id='custom-divider' />
     <Layout style={{ minHeight: '100vh'}}>
          <Layout
         style={{
         
-        backgroundImage: `url(${imgBackground})`,
-        backgroundSize: 'cover',
+        backgroundColor: "white",
+        paddingBottom: "10%",
             }}
         >
       <Sider
-        width="20%"
+        width="12%"
         style={{
-          backgroundColor: "white",
+          backgroundColor: "rgb(242, 244, 240)",
         }}
       >
      <Menu
   theme="light"
   mode="inline"
   style={{
+    backgroundColor: "transparent",
     padding: "30px 10px 10px",
     fontSize: "16px",
-    fontFamily: "-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,'Noto Sans',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji'"
+    fontFamily: "-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,'Noto Sans',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji'",
+    overflowY: 'auto',
+    position: 'fixed',
+    width: "auto",
+    border: '1px solid rgb(242, 244, 240)'
   }}
   defaultSelectedKeys={['1']}
 >
   {subcategories
-    .filter((subcategory) => subcategory.category_name === "Home")
+    .filter((subcategory) => subcategory.category_name === name)
     .map((subcategory, index) => (
       <Menu.Item
+      className='subcategories'
         key={index.toString()} // Use the index as the key
-        icon={<AppstoreOutlined />}
+        icon={<AppstoreOutlined  style={{ color: 'rgb(88, 150, 95)', fontSize: '20px'}}/>}
         onClick={(e)=> handleFilter(e, subcategory.subcategory_name)}
       >
         {subcategory.subcategory_name}
@@ -125,34 +141,6 @@ function CategoriesPage() {
 
 
   
-
-        <Divider />
-        <p style={{
-            margin: "20px 35px",
-            fontSize: "16px",
-            fontFamily: "-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,'Noto Sans',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji'"
-          }}>Price</p>
-          
-        <Slider
-        style={{ margin: "20px"}}
-            range={{
-            draggableTrack: true,
-            }}
-            defaultValue={[20, 50]}
-        />
-         <p style={{
-            margin: "20px 35px",
-            fontSize: "16px",
-            fontFamily: "-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,'Noto Sans',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji'"
-          }}>Date</p>
-        <DatePicker.RangePicker
-      style={{
-        width: '80%',
-        marginBottom: "30px",
-        marginLeft:"20px",
-        border: "1px solid #292c32"
-      }}
-    />
         
       </Sider>
       <Layout style={{ backgroundColor: "transparent"}}>
@@ -161,6 +149,7 @@ function CategoriesPage() {
           style={{
             display: 'flex',
             flexWrap: 'wrap',
+            paddingLeft: "2%"
           }}
         >
        {!!products && products
@@ -168,13 +157,12 @@ function CategoriesPage() {
         (!subcategory || (product.subcategory_name === subcategory))
           )
         .map((product, index) => (
-          <ShopCard key={index} cardKey={index} product={product} />
+          <ShopCard key={index} cardKey={index} product={product} dispatch={dispatch} />
         ))}
         </Content>
         </Layout>
         </Layout>
       </Layout>
-      <Footer />
       </>
   );
 }

@@ -37,7 +37,7 @@ const HomeSlider = () => {
           }}
           infinite={true}
           autoPlay={true}
-          autoPlaySpeed={2000}
+          autoPlaySpeed={100000}
           customTransition="transform 500ms ease-in-out"
           arrows={false}
         >
