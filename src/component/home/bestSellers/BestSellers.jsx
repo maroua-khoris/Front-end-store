@@ -4,6 +4,8 @@ import { ShoppingCartOutlined, HeartOutlined } from "@ant-design/icons";
 import axios from "axios";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../../redux/cartSlice";
+import { addToList } from "../../../redux/wishSLice";
+
 import "./bestSellers.css";
 
 const { Meta } = Card;
@@ -65,7 +67,22 @@ const BestSellers = () => {
                     }
                   />
                   <Divider />
-                  <HeartOutlined style={{ fontSize: "25px" }} />
+                  <HeartOutlined
+                    style={{ fontSize: "25px" }}
+                    onMouseEnter={(e) => {
+                      e.target.style.color = "red";
+                    }}
+                    onClick={() =>
+                      dispatch(
+                        addToList({
+                          _id: product._id,
+                          name: product.product_name,
+                          image: product.product_image[0],
+                          price: product.price,
+                        })
+                      )
+                    }
+                  />
                 </div>
               )}
 

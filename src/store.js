@@ -12,6 +12,7 @@ import {
 import storage from "redux-persist/lib/storage";
 import cartReducer from "./redux/cartSlice";
 import apiReducer from "../src/redux/reducers";
+import wishReducer from "./wishSLice";
 
 // Cart Reducer Configuration
 const persistConfig = {
@@ -27,7 +28,9 @@ export const store = configureStore({
   reducer: {
     cart: persistedCartReducer,
     data: apiReducer,
+    wish: wishReducer,
   },
+
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       serializableCheck: {

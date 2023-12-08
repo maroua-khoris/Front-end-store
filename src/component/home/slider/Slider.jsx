@@ -1,8 +1,3 @@
-/*import img1 from "../../../assets/homeSlider/img1.jpg";
-import img2 from "../../../assets/homeSlider/img2.jpg";
-import img3 from "../../../assets/homeSlider/img3.jpg";
-import img4 from "../../../assets/homeSlider/img4.jpg";
-import img5 from "../../../assets/homeSlider/img5.jpg";*/
 import vid1 from "../../../assets/homeSlider/vid1.mp4";
 import vid2 from "../../../assets/homeSlider/vid2.mp4";
 import vid3 from "../../../assets/homeSlider/vid3.mp4";
@@ -38,25 +33,23 @@ const HomeSlider = () => {
           }}
           infinite={true}
           autoPlay={true}
-          autoPlaySpeed={3100}
+          autoPlaySpeed={3010}
           customTransition="transform 500ms ease-in-out"
           arrows={false}
         >
           {videos.map((slide, index) => (
             <div key={index} className="each-slide">
               <video src={slide.video} muted autoPlay loop />
-              <div className="text-block">
-                <h3>
-                  Welcome to a world where every purchase is a celebration of
-                  culture, Step into the heart of Moroccan craftsmanship at our
-                  artisan store.
-                </h3>
-
-                <button>Shop Now</button>
-              </div>
             </div>
           ))}
         </Carousel>
+        <div className="text-block">
+          <h3>
+            Welcome to a world where every purchase is a celebration of culture.
+          </h3>
+
+          <button>Shop Now</button>
+        </div>
       </div>
     </div>
   );
