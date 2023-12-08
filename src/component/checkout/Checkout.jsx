@@ -8,7 +8,7 @@ import "./checkout.css";
 
 const Cart = () => {
   const dispatch = useDispatch();
-  const products = useSelector((state) => state.cartReducer.products);
+  const products = useSelector((state) => state.cart.products);
   const [totalAmt, setTotalAmt] = useState("");
   const [shippingCharge, setShippingCharge] = useState("");
 
