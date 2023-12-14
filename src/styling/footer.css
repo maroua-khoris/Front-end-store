@@ -1,0 +1,60 @@
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgb(200, 224, 180);
+  padding: 30px;
+}
+
+.baz {
+  font-size: medium;
+
+}
+
+.con {
+  margin: 0px;
+  width: 40%;
+  max-width: 400px;
+}
+
+.it {
+  font-size: 18px;
+}
+
+.follow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.loOgo {
+  max-width: 100%;
+  max-height: 70px;
+}
+
+.item {
+  font-size: 24px;
+  margin: 5px;
+}
+
+@media only screen and (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center; 
+  }
+
+  .con {
+    width: 80%; 
+    margin-bottom: 20px; 
+  }
+
+  .it {
+    font-size: 16px;
+  }
+
+  .follow {
+    flex-direction: row; 
+    justify-content: center;
+  }
+}

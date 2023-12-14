@@ -1,0 +1,29 @@
+.bodyy {
+    font-family: Arial, sans-serif;
+    background-image:url(../assets/Morocco3.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  .form-style {
+    width: 300px;
+    padding: 10px;
+    margin-bottom: 15px;
+  }
+  
+  h2 {
+    color: #333;
+  }
+  
+  .form-container {
+    background-color: rgb(242, 244, 240);
+    border-radius: 8px;
+    padding: 50px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
