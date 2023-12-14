@@ -1,44 +1,47 @@
 body {
-    margin: 0px;
+  margin: 0px;
 }
 .shopbar {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    padding: 2px 1px 2px! important;
-  }
-  :where(.css-dev-only-do-not-override-1g853jt).ant-divider {
-    border-block-start: 2px solid black! important;
-    margin: 10px 0px! important;
-  }
-  .iconProduct {
-    font-size: 28px;
-    margin-bottom: 10px;
-    padding: 8px;
-    border-radius: 30px;
-    color: rgb(96, 147, 103);
-  }
-  :where(.css-dev-only-do-not-override-1g853jt).ant-menu-light .ant-menu-item-selected {
-    background-color: #e6ffed! important;
-}
-:where(.css-dev-only-do-not-override-1g853jt).ant-menu-light .ant-menu-item-selected {
-    color: #0d9321! important;
-}
-:where(.css-dev-only-do-not-override-1g853jt).ant-slider .ant-slider-handle::after {
-    box-shadow: 0 0 0 2px #0d9321! important;
-}
-:where(.css-dev-only-do-not-override-1g853jt).ant-slider .ant-slider-track {
-    background-color: #0d9321! important;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 2px 1px 2px !important;
 }
 :where(.css-dev-only-do-not-override-1g853jt).ant-divider {
-    margin: 10px 20px! important;
+  border-block-start: 2px solid black !important;
+  margin: 10px 0px !important;
+}
+.iconProduct {
+  font-size: 28px;
+  margin-bottom: 10px;
+  padding: 8px;
+  border-radius: 30px;
+  color: rgb(96, 147, 103);
+}
+:where(.css-dev-only-do-not-override-1g853jt).ant-menu-light
+  .ant-menu-item-selected {
+  background-color: #076923 !important;
+}
+:where(.css-dev-only-do-not-override-1g853jt).ant-menu-light
+  .ant-menu-item-selected {
+  color: #0d9321 !important;
+}
+:where(.css-dev-only-do-not-override-1g853jt).ant-slider
+  .ant-slider-handle::after {
+  box-shadow: 0 0 0 2px #0d9321 !important;
+}
+:where(.css-dev-only-do-not-override-1g853jt).ant-slider .ant-slider-track {
+  background-color: #0d9321 !important;
+}
+:where(.css-dev-only-do-not-override-1g853jt).ant-divider {
+  margin: 10px 20px !important;
 }
 :where(.css-dev-only-do-not-override-1g853jt).ant-divider-horizontal {
-    width: 50%! important;
-    min-width: 85%! important;
+  width: 50% !important;
+  min-width: 85% !important;
 }
 #header {
   display: flex;
@@ -55,7 +58,7 @@ body {
 }
 
 #header .ant-menu-horizontal .ant-menu-submenu:hover {
-  color: rgb(85, 170, 46) !important;
+  color: rgb(3, 128, 11) !important;
 }
 
 .ant-layout-header .ant-menu {
@@ -82,17 +85,6 @@ body {
   margin: 0;
 }
 
-.card-header {
-  font-size: 20px;
-  margin: 9px;
-  color: white;
-  cursor: pointer;
-  transition: background-color 0.3s;
-  background-color: rgba(78, 166, 37, 0.533);
-  height: 40px;
-  width: 40px;
-  border-radius: 30px;
-}
 .user {
   font-size: 20px;
   margin: 9px;
@@ -118,7 +110,7 @@ body {
   font-size: large;
 }
 :where(.css-dev-only-do-not-override-1g853jt) a {
-  color: black! important;
+  color: black !important;
 }
 
 .he {
@@ -131,28 +123,28 @@ body {
   align-items: center;
 }
 .ant-menu {
-  background-color :white;
-color: black;}
-
+  background-color: white;
+  color: black;
+}
 
 .ant-menu-dark .ant-menu-item-selected {
-    background-color: white;
-  color: black; }
+  background-color: white;
+  color: black;
+}
 .card-popup {
-    position: absolute;
-    background-color: rgb(242, 244, 240);
-    padding-top: 20px;
-    top: 10%;
-    right: 5%;
-    width: 25%;
-    height: auto;
-    z-index: 1;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    box-shadow: 4px 4px 4px 8px rgba(0, 0, 0, 0.1); /* Example shadow: 4px vertical offset, 8px blur, slight transparency */
-  }
-  
+  position: absolute;
+  background-color: rgb(242, 244, 240);
+  padding-top: 10px;
+  right: 5%;
+  width: max-content;
+  height: auto;
+  z-index: 1;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 4px 4px 4px 8px rgba(0, 0, 0, 0.1); /* Example shadow: 4px vertical offset, 8px blur, slight transparency */
+}
+
 .notif-cart {
   position: absolute;
   background-color: red;
@@ -166,23 +158,22 @@ color: black;}
   justify-content: center;
   color: white; /* Add text color for better visibility */
 }
-h2:where(.css-dev-only-do-not-override-1g853jt).ant-typography{
-  font-weight: 500! important;
-    font-size: 15px! important;
+h2:where(.css-dev-only-do-not-override-1g853jt).ant-typography {
+  font-weight: 500 !important;
+  font-size: 15px !important;
 }
 :where(.css-dev-only-do-not-override-1g853jt)[class^="ant-typography"] {
-  font-family: 'Popiline', sans-serif! important;
+  font-family: "Popiline", sans-serif !important;
 }
-:where(.css-dev-only-do-not-override-1g853jt)[class^="ant-btn"], :where(.css-dev-only-do-not-override-1g853jt)[class*=" ant-btn"] {
-  font-family: 'Popiline', sans-serif! important;
-  font-size: 13px! important;
+:where(.css-dev-only-do-not-override-1g853jt)[class^="ant-btn"],
+:where(.css-dev-only-do-not-override-1g853jt)[class*=" ant-btn"] {
+  font-family: "Popiline", sans-serif !important;
+  font-size: 13px !important;
   font-weight: 600;
 }
-:where(.css-dev-only-do-not-override-1g853jt).ant-btn-primary {
 
-}
 :where(.css-dev-only-do-not-override-1g853jt).ant-btn-primary {
-  background-color: rgb(174, 231, 181);  
+  background-color: rgb(174, 231, 181);
   margin-left: 20px;
   margin-right: 20px;
   margin-bottom: 20px;
@@ -193,22 +184,23 @@ h2:where(.css-dev-only-do-not-override-1g853jt).ant-typography{
   color: black;
 }
 :where(.css-dev-only-do-not-override-1g853jt).ant-btn-primary:hover {
-  background-color: rgb(174, 231, 181)! important;  
-  color: black!important;
-
+  background-color: rgb(174, 231, 181) !important;
+  color: black !important;
 }
 :where(.css-dev-only-do-not-override-1g853jt).ant-flex-justify-space-between {
- justify-content: unset;
+  justify-content: unset;
 }
-.quantity-value, .quantity-btn {
-  color: black! important;
+.quantity-value,
+.quantity-btn {
+  color: black !important;
 }
 .quantity {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
-.moins, .plus{
+.moins,
+.plus {
   color: rgb(88, 150, 95);
   font-size: 30px;
 }
@@ -217,8 +209,8 @@ h2:where(.css-dev-only-do-not-override-1g853jt).ant-typography{
 }
 .price-card {
   margin-left: 60%;
-  font-family: 'Popiline', sans-serif! important;
-  font-size: 17px! important;
+  font-family: "Popiline", sans-serif !important;
+  font-size: 17px !important;
   color: rgb(88, 150, 95);
 }
 .details {
@@ -227,14 +219,14 @@ h2:where(.css-dev-only-do-not-override-1g853jt).ant-typography{
   justify-content: space-between;
 }
 .notes {
-  font-family: 'Popiline', sans-serif! important;
-  font-size: 13px! important;
-  margin: 0px;
+  font-family: "Popiline", sans-serif !important;
+  font-size: 13px !important;
+  margin: 0 20px 0 20px;
   text-align: center;
   color: black;
   font-weight: 400;
 }
-.total{
+.total {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -244,13 +236,12 @@ h2:where(.css-dev-only-do-not-override-1g853jt).ant-typography{
 .title-total {
   color: black;
   font-size: 17px;
-  font-family: 'Popiline', sans-serif;
+  font-family: "Popiline", sans-serif;
 }
 .product-container {
   max-height: 300px; /* Adjust the max height as needed */
   overflow-y: auto;
   margin-right: 3px;
-  margin-left: 5px;
 }
 .product-container::-webkit-scrollbar-thumb {
   background-color: rgb(88, 150, 95); /* Color of the scrollbar thumb */
@@ -259,7 +250,7 @@ h2:where(.css-dev-only-do-not-override-1g853jt).ant-typography{
 .product-container::-webkit-scrollbar {
   width: 8px;
 }
-.partie1{
+.partie1 {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -269,24 +260,152 @@ h2:where(.css-dev-only-do-not-override-1g853jt).ant-typography{
 .subcategories {
   color: black;
   font-size: 15px;
-  font-family: 'Popiline', sans-serif;
+  font-family: "Popiline", sans-serif;
   text-transform: uppercase;
 }
 :where(.css-dev-only-do-not-override-1g853jt).ant-divider {
-  width: 100%! important;
-  margin: unset! important;
+  width: 100% !important;
+  margin: unset !important;
 }
 #custom-divider {
   border-block-start: 2px solid rgb(242, 244, 240) !important;
   margin: 0px !important;
 }
 :where(.css-dev-only-do-not-override-1g853jt).ant-card .ant-card-body {
-  padding: 0px! important;
-  padding-left: 24px! important;
-  padding-right: 24px! important;
-  padding-top: 20px! important;
+  padding: 0px !important;
+  padding-left: 24px !important;
+  padding-right: 24px !important;
+  padding-top: 20px !important;
 }
 :where(.css-dev-only-do-not-override-1g853jt).ant-card .ant-card-meta-title {
-  font-weight: 200!important;
-  font-size: 15px!important;
+  font-weight: 200 !important;
+  font-size: 15px !important;
+}
+#header {
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.ant-layout-header.custom-header {
+  height: 64px;
+  padding: 0 50px;
+  color: rgba(0, 0, 0, 0.88);
+  line-height: 64px;
+}
+
+#header .ant-menu-horizontal .ant-menu-submenu:hover {
+  color: rgb(35, 92, 9) !important;
+}
+
+.ant-layout-header .ant-menu {
+  line-height: inherit;
+  background-color: white;
+  font-size: 17px;
+  font-weight: 600;
+  width: 450px;
+}
+
+.demo-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  max-width: 100%;
+  max-height: 70px;
+  transform: translate(0%, 15%);
+}
+
+body {
+  display: block;
+  margin: 0;
+}
+
+.he {
+  display: flex;
+  align-items: center;
+}
+
+.icon-button {
+  position: relative;
+  margin: 5px;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  color: #000000;
+  border: none;
+  outline: none;
+  border-radius: 50%;
+  font-size: 25px;
+}
+
+.icon-button:hover {
+  cursor: pointer;
+
+  color: black;
+}
+
+.icon-button__badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  min-width: 20px;
+  height: 20px;
+  background: red;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  font-size: 12px;
+}
+
+.user:hover {
+  color: black;
+}
+
+.menu-item {
+  padding: 10px;
+  cursor: pointer;
+  height: 70px;
+  margin-top: -8px;
+  font-size: large;
+}
+
+.uc {
+  display: flex;
+  align-items: center;
+}
+.ant-menu {
+  background-color: rgba(78, 166, 37, 0.533);
+}
+
+.ant-menu-dark .ant-menu-item-selected {
+  background-color: white;
+  color: black;
+}
+
+.view-add {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
+.close-icon {
+  font-size: 19px;
+  margin: 0 4px 0 4px;
+}
+.close-icon:hover {
+  color: red;
+}
+
+.ant-menu-dark.ant-menu-horizontal > .ant-menu-submenu-selected {
+  background-color: transparent !important;
 }

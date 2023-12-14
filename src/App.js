@@ -7,7 +7,6 @@ import Footer from "./component/footer/footer.js";
 import EmptyCard from "./component/emptyCard/EmptyCard.jsx";
 import { Provider } from "react-redux";
 import { store } from "./store.js";
-import WishList from "./component/wishList/WishList.jsx";
 
 function App() {
   return (
@@ -18,7 +17,6 @@ function App() {
           <Route path="/cart" element={<CartView />} />
           <Route path="/empty-card" element={<EmptyCard />} />
           <Route path="/category/:name" element={<CategoriesPage />} />
-          <Route path="/wish-list" element={<WishList />} />
         </Routes>
         <Footer />
       </BrowserRouter>

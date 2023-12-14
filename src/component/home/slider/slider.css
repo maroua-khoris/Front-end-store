@@ -1,43 +1,5 @@
-.text-block {
-  width: fit-content;
-  position: absolute;
-  top: 69%;
-  left: 10%;
-  z-index: 2;
-  background-color: rgba(0, 0, 0, 0.5);
-  padding: 20px;
-}
-
-.text-block h3 {
-  margin: 0;
-  font-weight: 600;
-  font-size: 29px;
-  color: white;
-  width: 100%;
-  font-family: "Poppins", sans-serif;
-}
-
-.text-block button {
-  margin-left: 40%;
-  border-radius: 4px;
-  width: 180px;
-  height: 70px;
-  padding: 6px;
-  background-color: rgba(38, 123, 32, 0.502);
-  font-family: "Rubik", sans-serif;
-  font-weight: 700;
-  font-size: 21px;
-  cursor: pointer;
-  color: #fff;
-  border: none;
-}
-
-.text-block button:hover {
-  background: rgb(38, 143, 38);
-}
-
 video {
-  width: 1385px;
+  width: 1355px;
   height: 660px;
   object-fit: cover;
 }

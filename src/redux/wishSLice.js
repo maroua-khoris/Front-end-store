@@ -12,7 +12,7 @@ export const wishSlice = createSlice({
       state.wishList.push(action.payload);
     },
 
-    deleteItem: (state, action) => {
+    deleteWishItem: (state, action) => {
       state.wishList = state.wishList.filter(
         (item) => item._id !== action.payload
       );
@@ -23,5 +23,5 @@ export const wishSlice = createSlice({
   },
 });
 
-export const { addToList, deleteItem, resetList } = wishSlice.actions;
+export const { addToList, deleteWishItem, resetList } = wishSlice.actions;
 export default wishSlice.reducer;

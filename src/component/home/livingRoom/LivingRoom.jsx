@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import pic from "./1.jpg";
+import img from "./4.jpg";
 import "./livingRoom.css";
 
 function LivingRoom() {
@@ -26,10 +26,17 @@ function LivingRoom() {
 
   return (
     <div className="living-room-container">
-      <h1 className="title-livroom">NEED A LIVINGROOM UPGRADE? </h1>
+      <div className="title-new-arr">
+        <h1>Need A Livingroom Upgrade? </h1>
+      </div>
       <div className={`fade-zoom ${isVisible ? "fade-in" : ""}`}>
-        <img src={pic} alt="" />
-        <button className="explore-butt">Explore More</button>
+        <img alt="" src={img} />
+        <button
+          className="shop"
+          style={{ position: "absolute", top: "40%", left: "40%" }}
+        >
+          Explore More
+        </button>
       </div>
     </div>
   );

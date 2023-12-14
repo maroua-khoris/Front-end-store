@@ -41,7 +41,8 @@ const NewArrival = () => {
         const response = await axios.get(
           "http://localhost:4000/api/products/last"
         );
-        setLastProducts(response.data.docs);
+
+        setLastProducts(response.data);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -49,6 +50,10 @@ const NewArrival = () => {
 
     lastProduct();
   }, []);
+
+  if (!lastProducts) {
+    return null;
+  }
 
   return [
     <div key="newProducts" className="newProducts">
@@ -77,7 +82,7 @@ const NewArrival = () => {
               }
             >
               {hoveredCard === index && (
-                <div className="shopbar">
+                <div className="shop-bar">
                   <ShoppingCartOutlined
                     style={{ fontSize: "25px" }}
                     onClick={() =>
@@ -115,7 +120,7 @@ const NewArrival = () => {
 
               <Meta
                 title={product.product_name}
-                description={`${product.price} DH`}
+                description={`${product.price} MAD`}
               />
             </Card>
 

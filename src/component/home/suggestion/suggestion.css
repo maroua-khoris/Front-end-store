@@ -21,7 +21,7 @@
 }
 
 .shop {
-  background-color: black;
+  background-color: #073a06;
   border-radius: 4px;
   width: 205px;
   height: 80px;
@@ -33,10 +33,11 @@
   font-weight: 600;
   font-family: sans-serif;
   cursor: pointer;
+  border-color: #073a06;
 }
 
 .shop:hover {
-  background: rgb(39, 38, 38);
+  background: rgb(35, 107, 35);
 }
 
 .sugg-img {

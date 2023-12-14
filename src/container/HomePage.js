@@ -6,6 +6,7 @@ import Suggestion from "../component/home/suggestion/Suggestion";
 import WhyBazaar from "../component/home/whyBazaar/WhyBazaar";
 import Header from "../component/header/Header.jsx";
 import LivingRoom from "../component/home/livingRoom/LivingRoom.jsx";
+import Jewellery from "../component/home/jewellery/jewellery.jsx";
 
 const Home = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -30,6 +31,7 @@ const Home = () => {
       <NewArrival />
       <Suggestion />
       <BestSellers />
+      <Jewellery />
       <LivingRoom />
       <WhyBazaar />
     </div>

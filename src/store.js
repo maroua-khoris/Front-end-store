@@ -12,7 +12,7 @@ import {
 import storage from "redux-persist/lib/storage";
 import cartReducer from "./redux/cartSlice";
 import apiReducer from "../src/redux/reducers";
-import wishReducer from "./wishSLice";
+import wishReducer from "./redux/wishSLice";
 
 // Cart Reducer Configuration
 const persistConfig = {
@@ -22,13 +22,14 @@ const persistConfig = {
 };
 
 const persistedCartReducer = persistReducer(persistConfig, cartReducer);
+const persistedWishReducer = persistReducer(persistConfig, wishReducer);
 
 // Main Store Configuration
 export const store = configureStore({
   reducer: {
     cart: persistedCartReducer,
     data: apiReducer,
-    wish: wishReducer,
+    wish: persistedWishReducer,
   },
 
   middleware: (getDefaultMiddleware) =>

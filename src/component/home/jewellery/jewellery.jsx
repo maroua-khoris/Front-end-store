@@ -5,38 +5,61 @@ import axios from "axios";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../../redux/cartSlice";
 import { addToList } from "../../../redux/wishSLice";
-import who from "../../../assets/who.jpg";
-
-import "./bestSellers.css";
+import Carousel from "react-multi-carousel";
 
 const { Meta } = Card;
+const responsive = {
+  superLargeDesktop: {
+    breakpoint: { max: 4000, min: 3000 },
+    items: 5,
+  },
+  desktop: {
+    breakpoint: { max: 3000, min: 1024 },
+    items: 4,
+  },
+  tablet: {
+    breakpoint: { max: 1024, min: 464 },
+    items: 2,
+  },
+  mobile: {
+    breakpoint: { max: 464, min: 0 },
+    items: 1,
+  },
+};
 
-const BestSellers = () => {
+const Jewellery = () => {
   const [hoveredCard, setHoveredCard] = useState(null);
-  const [bestProducts, setBestProducts] = useState([]);
+  const [jewellery, setjewellery] = useState([]);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    const bestProduct = async () => {
+    const jewellery = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:4000/api/products/bestProducts"
+          "http://localhost:4000/api/products/women/accessories"
         );
-        setBestProducts(response.data);
+        setjewellery(response.data);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
     };
 
-    bestProduct();
+    jewellery();
   }, []);
 
   return [
-    <div key="bestProducts" className="bestProducts">
-      <h1>Best Sellers</h1>
-      <div key="bestProducts" className="bestProducts-cards">
-        {bestProducts.map((product, index) => (
-          <div key={index} className="best-product-card">
+    <div key="jewellery" className="jewellery">
+      <div className="title-new-arr">
+        <h1>Accessories</h1>
+      </div>
+      <Carousel
+        responsive={responsive}
+        customTransition="transform 500ms ease-in-out"
+        arrows={true}
+        infinite={true}
+      >
+        {jewellery.map((product, index) => (
+          <div key={index} className="jewellery-card">
             <Card
               hoverable
               className={`card ${hoveredCard === index ? "hovered" : ""}`}
@@ -94,13 +117,9 @@ const BestSellers = () => {
             </Card>
           </div>
         ))}
-      </div>
-      <div className="who-made">
-        <h1>Who Made Your Products</h1>
-        <img alt="" src={who} />
-      </div>
+      </Carousel>
     </div>,
   ];
 };
 
-export default BestSellers;
+export default Jewellery;
